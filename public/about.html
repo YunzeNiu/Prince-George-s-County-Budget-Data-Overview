@@ -1,0 +1,186 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince George Budget Data Overview</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/d3@6.2.0/dist/d3.min.js"></script>
+</head>
+<body>
+  <section class="hero has-background-link-dark">
+    <div class="hero-body">
+      <p class="title has-text-white">
+        Prince George County Budget Data Overview
+      </p>
+      <p class="subtitle has-text-white">
+        About the Project
+      </p>
+    </div>
+  </section>
+
+    <div class='block'>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="https://data.princegeorgescountymd.gov/">
+            <img src="https://data.princegeorgescountymd.gov/api/assets/68A289A4-F198-4DF4-91E1-A651C157C7AC">
+          </a>
+      
+          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html">
+              Home
+            </a>
+      
+            <a class="navbar-item" href="about.html">
+              About
+            </a>
+
+            <a class="navbar-item" href="https://data.princegeorgescountymd.gov/browse?category=Finance+and+Budget">
+              Data
+            </a>
+
+            <a class="navbar-item" href="https://github.com/Dan-Gugel/INST377-Group-Project">
+              Code
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="block">
+        
+      <div class="box">
+
+        <p style="font-size: 30px"> INST 377 Group 13 Final Project - Prince George's County Budget Data Overview</p>
+        <p style="font-size: 25px">Team Members: Joe Filla, Yunze Niu, Daniel Gugel</p>
+        <p style="font-size: 20px"><a href ="https://inst-377-group-13.herokuapp.com/">Heroku Link: https://inst-377-group-13.herokuapp.com/</a></p>
+        <br> <br>
+        <p><b>Information Problem to be Solved</b></p> 
+        <p>Our goal for this project was to take available Prince George's County Budgetary data, 
+          and display it in a way that is more easily understandable. Prince George's county provides yearly budgetary data, 
+          and each available dataset contains thousands of entries. With this project,
+           we hope to gain an understanding of which companies/industires budget is allocated to.</p> 
+        <br>
+
+        <p><b>Identified Stakeholders/Target Browsers</b></p>
+        <br>
+        <ul><b>Stakeholders</b>
+            <li>• Prince George's County Residents</li>
+            <li>• Maryland Residents</li>
+            <li>• Government spending auditors and researchers</li>
+        </ul>
+        
+        <br><br>
+
+        <ul><b>Supported/Targeted Browsers</b> 
+            <li>• Chrome/Chromium</li>
+            <li>• Firefox</li>
+            <li>• Opera</li>
+            <li>• IE 8+</li>
+            <li>• Safari</li>
+            <li>• IOS</li>
+            <li>• Android</li>
+        </ul>
+
+        <br>
+
+        <p><b>Data Source</b></p>
+        <p>https://data.princegeorgescountymd.gov/browse?category=Finance+and+Budget</p>
+        <br>
+
+        <p><b>Chosen Strategies</b></p> 
+        <ul>For this project, we were given yearly data available from Prince George's County that was divided into these points:</p>
+          <li>• Payee Name</li>
+          <li>• Agency</li>
+          <li>• Zip Code</li>
+          <li>• Amount</li>
+          <li>• Payment Description</li>
+      </ul>
+      <br>
+      <p>Given the available data, we decided to break this down by the Agency. 
+        
+        The Agency is the direct recipient of the goals of the PG County budget. It also tells us information as 
+        to which sector of the economy the budget is being targeted at. For example, one agency is Rustler Construction INC,
+         a Maryland local construction contractor. The data provided has thousands of entries, with numerous different agencies. 
+         To make the chart more readable while maintaing impact, we decided to create an interval system, so we can inspect specific entries carefully.
+        
+        Originally we wanted to add a geospatial element to this project, where we would be able to see which areas specific portions 
+        of the funding were spent. We determined this to be too much for this project, and decided to drop this element prior to the due date. 
+      </p>
+      <br>
+
+      <p><b>Technical Decisions + Technology Stack</b></p>
+          <ul><b>Frameworks</b>
+              <li>• Bulma/Font-Awesome</li>
+          </ul>
+          <br>
+          <ul><b>Libraries</b>
+              <li>• Canvas.js</li>
+              <li>• D3</li>
+          </ul>
+        
+        
+        <br>
+
+        <p><b>Reasoning</b></p>
+        <p>
+        <b>• Bulma</b>: Bulma is an open source CSS Framework based on Flexbox. Bulma gave us an easy and powerful 
+        customization tool to make our website look modern, while maintaining performance. Bulma is unique in that it is 
+        all written within one single file, which makes it a portable and compatible choice. Within our index.html file, we 
+        simply import it as a stylesheet. 
+        </p>
+        <br>
+        <p><b>• Canvas.js</b> was chosen for its ability to neatly generate, manipulate, and design dynamic graphs. 
+            Canvas was used for generating our primary bar graph for this project. 
+        </p>
+        <br>
+        <p>
+            <b>• D3</b> is a manipulation engine for CVS files. Since the data provided by Prince George's County is supplied in a .cvs file format, we needed this tool to properly ingest and manipulate the data before utilizing it in Canvas.
+        </p>
+        
+        <br>
+
+        <p><b>Addressing the Problem</b></p>
+        <p>Our website provides a summarization of the largest 10 Agencies to receive funding from the Prince George's County budget.
+           This provides us insight as to what various industries and sections of our society are receiveing funding. For example, 
+           for all 5 years of the dataset available to us, the Prince Georgies County Board has taken 4 billion of the total funding. 
+           In comparison, the 4th most well funded agency is Connex Transit, at 127 Million. Here we see a stark disparity in where 
+           the budget is going, and our solution allowed us to have this perspective. 
+        </p>
+        <br>
+        <p><b>Challenges Faced</b></p>
+        <p>
+        During the creation of this project, we encountered a few challenges along the way. The first challenge we encountered was handling the 
+        large amount of data we have been given to work with. We needed to find a way to properly work with this data, and parse it smartly. 
+        To do this we utilized D3 to help with parsing the dataset.
+        
+        A portion that presented a challenge was properly linking event listeners to multiplte check boxes, as well as linking filters 
+        to the event listeners. 
+      </p>
+      <br>
+      <ul><b>Future Work Directions</b></p>
+        <li>• Add a geospatial element to allow localized dispurtion of funding</li>
+        <li>• Add various graphing options for more varied options to analyze the dataset</li>
+      </ul>
+ 
+      </div>
+    </div>  
+
+    <script src="canvasjs.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
